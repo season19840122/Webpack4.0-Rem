@@ -1,0 +1,25 @@
+{
+	"success": true,
+	"code": 0,
+	"message": "success",
+	"data": [
+    {
+      "prizeId": 1,
+      "boxId": 1,
+      "picUrl": "123.png",
+      "prizeType": "游戏货币",
+      "prizeName": "1qb",
+      "showProbability": 0.11532,
+      "referencePrice": 1.0
+    },
+    {
+      "prizeId": 2,
+      "boxId": 1,
+      "picUrl": "223.png",
+      "prizeType": "游戏货币",
+      "prizeName": "5qb",
+      "showProbability": 0.9232,
+      "referencePrice": 5.0
+    }
+  ]
+}

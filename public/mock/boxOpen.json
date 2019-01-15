@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "code": 0,
+  "message": "开箱成功",
+  "data": [
+    {
+      "prizeName": "1qb",
+      "picUrl": "123.png",
+      "prizeCnt": 1,
+      "prizeUnit": "点券",
+      "freeExpireTime": null,
+      "free": false
+    },
+    {
+      "prizeName": "1qb",
+      "picUrl": "123.png",
+      "prizeCnt": 1,
+      "prizeUnit": "点券",
+      "freeExpireTime": null,
+      "free": false
+    },
+    {
+      "prizeName": "1qb",
+      "picUrl": "123.png",
+      "prizeCnt": 1,
+      "prizeUnit": "点券",
+      "freeExpireTime": null,
+      "free": false
+    },{
+      "prizeName": "1qb",
+      "picUrl": "123.png",
+      "prizeCnt": 1,
+      "prizeUnit": "点券",
+      "freeExpireTime": null,
+      "free": false
+    },
+    {
+      "prizeName": "1qb",
+      "picUrl": "123.png",
+      "prizeCnt": 1,
+      "prizeUnit": "点券",
+      "freeExpireTime": null,
+      "free": false
+    },
+    {
+      "prizeName": "1qb",
+      "picUrl": "123.png",
+      "prizeCnt": 1,
+      "prizeUnit": "点券",
+      "freeExpireTime": null,
+      "free": false
+    }
+
+  ]
+}

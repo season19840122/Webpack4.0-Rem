@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "code": 0,
+  "message": "",
+  "data": [{
+    "boxId": 1,
+    "boxName": "test1",
+    "activityId": 1,
+    "activityName": "PUBG活动",
+    "gameId": 1000001,
+    "gameName": "pubg",
+    "boxPrice": 10,
+    "isFree": null,
+    "reachCnt": null,
+    "status": "启用",
+    "isHasFree": true
+    },
+    {
+      "boxId": 12,
+      "boxName": "test2",
+      "activityId": 1,
+      "activityName": "dnf活动",
+      "gameId": 1000001,
+      "gameName": "dnf",
+      "boxPrice": 10,
+      "isFree": null,
+      "reachCnt": null,
+      "status": "启用",
+      "isHasFree": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "code": 0,
+  "message": "开箱成功",
+  "data": [{
+      "prizeName": "20Q币",
+      "picUrl": "223.png",
+      "freeExpireTime": null,
+      "free": false
+    },
+    {
+      "prizeName": "5Q币",
+      "picUrl": "223.png",
+      "freeExpireTime": null,
+      "free": false
+    },
+    {
+      "prizeName": "10Q币",
+      "picUrl": "223.png",
+      "freeExpireTime": null,
+      "free": false
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" />
+    <title>活动中心</title>
+ </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      var utils = {
+        getUrlParam: function(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
+          var r = window.location.search.substr(1).match(reg); // 匹配目标参数
+          if (r != null) return unescape(r[2]);
+          return null; // 返回参数值
+        }
+      }
+      var getActivityName = function() {
+        // 正式
+        var activityName = utils.getUrlParam('activityName');
+        var publicPath = 'https://static.gameboxmall.com/show/';
+        // test
+        // var publicPath = '';
+        var head = document.getElementsByTagName('head')[0];
+        var body = document.getElementsByTagName('body')[0];
+
+        // if(document.getElementsByTagName('head').length > 1) {
+          var href = document.location.href.indexOf('center');
+          if(href === -1) {
+            var arrLink = [
+              publicPath + activityName + '/css/vendor.css',
+              publicPath + activityName + '/css/'+ activityName +'.css'
+            ];
+            var arrScript = [
+              publicPath + activityName + '/js/vendor.js',
+              publicPath + activityName + '/js/'+ activityName +'.js'
+            ];
+          } else {
+            var arrLink = [
+              publicPath + activityName + '/css/vendor.css',
+              publicPath + activityName + '/css/center.css'
+            ];
+            var arrScript = [
+              publicPath + activityName + '/js/vendor.js',
+              publicPath + activityName + '/js/center.js'
+            ];
+          }
+          arrLink.forEach(item => {
+            var link = document.createElement('link');
+            link.href = item;
+            link.rel = 'stylesheet';
+            head.appendChild(link);
+          });
+          arrScript.forEach(item => {
+            var script = document.createElement('script');
+            script.src = item;
+            script.type = 'text/javascript';
+            body.appendChild(script);
+          });
+        // }
+      }();
+      
+      // 百度统计
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?688e087eb52a24d2e1b1f5ac2ff8efa5";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "code": 0,
+  "message": "success",
+  "data": {
+    "code": 0,
+    "msg": null,
+    "limit": 10,
+    "page": 1,
+    "pageTotal": 2,
+    "data": [{
+      "extractId": 10,
+      "orderNo": "JBLQ20181212163948800MF8T",
+      "partnerOrderNo": null,
+      "activityId": 1,
+      "activityName": "123test",
+      "userId": 1,
+      "gameId": 11256,
+      "gameName": "地下城与勇士",
+      "areaId": 1,
+      "areaName": "广东区",
+      "serverId": 1,
+      "serverName": "广东1区",
+      "gameAccount": "37222843",
+      "roleName": "鬼剑士wud",
+      "extractCnt": 1000,
+      "prizeUnit": "万金币",
+      "partnerPrice": null,
+      "referencePrice": null,
+      "phone": "18818888888",
+      "qq": "37222943",
+      "status": "提取失败",
+      "outId": null,
+      "callbackTime": null,
+      "callbackRemark": null,
+      "addTime": "2018-12-12 16:39:49"
+    }],
+    "count": 11,
+    "userId": 1,
+    "selectTime": null,
+    "activityId": null
+  }
+}
