@@ -3,6 +3,7 @@ node_modules
 dist
 src/psds
 .svn
+www
 
 # local env files
 .env.local

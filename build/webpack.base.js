@@ -11,6 +11,7 @@ config.HTMLDirs.forEach(item => {
   let filename = `${item.page}.html`;
   if (item.dir) filename = `${item.dir}/${item.page}.html`;
   const htmlPlugin = new HTMLWebpackPlugin({
+    publicPath: config.publicPath, //生成 publicPath
     title: item.title, // 生成的 html 页面的标题
     filename: filename, // 生成到 dist 目录下的 html 文件名称，支持多级目录（eg: `${item.page}/index.html`）
     template: path.resolve(__dirname, '../src/template/index.html'), // 模板文件，不同入口可以根据需要设置不同模板
