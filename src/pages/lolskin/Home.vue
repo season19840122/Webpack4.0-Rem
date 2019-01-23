@@ -44,7 +44,7 @@ export default {
           // 获取领奖 flag
           t.getFlag(res.data.receiveTemplate);
           // 登录判断，如果要测试可以取反 !t.flag.isLogin
-          if(!t.flag.isLogin) {
+          if(t.flag.isLogin) {
             t.doFreeTime(res.data.activityId);
             t.getUserData(res.data.activityId,res.data.gameId);
           }

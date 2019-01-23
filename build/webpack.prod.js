@@ -24,7 +24,14 @@ module.exports = webpackMerge(webpackBase, {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader'
+          'postcss-loader',
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 192,
+              remPrecision: 6
+            }
+          }
         ]
       }, {
         test: /\.scss$/,
@@ -33,13 +40,14 @@ module.exports = webpackMerge(webpackBase, {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 192,
+              remPrecision: 6
+            }
+          },
           'sass-loader',
-          // {
-          //   loader: 'sass-loader',
-          //   options: {
-          //     outputStyle: 'expanded',
-          //   },
-          // },
           {
             loader: 'sass-resources-loader',
             options: {

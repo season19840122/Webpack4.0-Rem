@@ -8,6 +8,6 @@
     "activityId": 1,
     "templateName": "文字",
     "minReceiveCnt": "500",
-    "receiveTemplate": "cdkey"
+    "receiveTemplate": "点券"
   }
 }

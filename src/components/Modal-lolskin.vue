@@ -40,7 +40,15 @@
       <i class="i-close" @click="closeRefresh"></i>
       <div class="contents">
         <h3 class="title">恭喜您中奖了   您获得的奖品为</h3>
-        <a-carousel arrows :slidesToShow="5" :slidesToScroll="5" :infinite="false" :dots="false">
+        <div class="prize-box" style="margin: 0;" v-if="prizeList.length < 6">
+          <div class="prize-wrap" v-for="(item, index) in prizeList" :key="index">
+            <img :src="'https://static.gameboxmall.com/upload/' + item.picUrl" class="prize-img" alt="">
+            <!-- <img src="@images/test-lolskin.png" class="prize-img" alt=""> -->
+            <p class="prize-name">{{ item.prizeName }}</p>
+            <p class="prize-val">价值{{ item.prizeCnt }}{{ item.prizeUnit }}</p>
+          </div>
+        </div>
+        <a-carousel arrows :slidesToShow="5" :slidesToScroll="5" :infinite="false" :dots="false" v-else>
           <div slot="prevArrow" slot-scope="props" class="custom-slick-arrow">
           </div>
           <div slot="nextArrow" slot-scope="props" class="custom-slick-arrow right">

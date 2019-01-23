@@ -4,7 +4,15 @@
     <div class="dialog-wrap lottery" v-if="currentModal == 'commonCan'">
       <i class="i-close" @click="closeModal"></i>
       <div class="contents">
-        <a-carousel arrows :slidesToShow="5" :slidesToScroll="5" :infinite="false" :dots="false">
+        <div class="prize-box" v-if="commonCan.length < 6">
+          <div class="prize-wrap" v-for="(item, index) in commonCan" :key="index">
+            <img :src="'https://static.gameboxmall.com/upload/' + item.picUrl" class="prize-img" alt="">
+            <!-- <img src="@images/test-lolskin.png" class="prize-img" alt=""> -->
+            <p class="prize-name">{{ item.prizeName }}</p>
+            <p class="prize-val">中奖概率 {{ item.showProbability*100 | saveTwoDigit}}%</p>
+          </div>
+        </div>
+        <a-carousel arrows :slidesToShow="5" :slidesToScroll="5" :infinite="false" :dots="false" v-else>
           <div slot="prevArrow" slot-scope="props" class="custom-slick-arrow">
           </div>
           <div slot="nextArrow" slot-scope="props" class="custom-slick-arrow right">
@@ -23,7 +31,15 @@
     <div class="dialog-wrap lottery" v-if="currentModal == 'goldenCan'">
       <i class="i-close" @click="closeModal"></i>
       <div class="contents">
-        <a-carousel arrows :slidesToShow="5" :slidesToScroll="5" :infinite="false" :dots="false">
+        <div class="prize-box" v-if="goldenCan.length < 6">
+          <div class="prize-wrap" v-for="(item, index) in goldenCan" :key="index">
+            <img :src="'https://static.gameboxmall.com/upload/' + item.picUrl" class="prize-img" alt="">
+            <!-- <img src="@images/test-lolskin.png" class="prize-img" alt=""> -->
+            <p class="prize-name">{{ item.prizeName }}</p>
+            <p class="prize-val">中奖概率 {{ item.showProbability*100 | saveTwoDigit}}%</p>
+          </div>
+        </div>
+        <a-carousel arrows :slidesToShow="5" :slidesToScroll="5" :infinite="false" :dots="false" v-else>
           <div slot="prevArrow" slot-scope="props" class="custom-slick-arrow">
           </div>
           <div slot="nextArrow" slot-scope="props" class="custom-slick-arrow right">

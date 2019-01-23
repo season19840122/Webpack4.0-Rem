@@ -30,6 +30,7 @@ export default {
       };
     },
     resize(){
+      // document.documentElement.clientWidth || document.body.clientWidth + '：' + document.documentElement.clientHeight || document.body.clientHeight
       var fontSize = (document.documentElement.clientWidth || document.body.clientWidth) / 10;
       if(fontSize < 102.4) {
         fontSize = 102.4;

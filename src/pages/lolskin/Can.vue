@@ -1,7 +1,7 @@
 <template>
   <div class="can-wrap">
-    <div class="can-common" v-if="boxInfo[0]" @click="openAward('commonCan')">
-      <div class="img-wrap">
+    <div class="can-common" v-if="boxInfo[0]">
+      <div class="img-wrap"  @click="openAward('commonCan')">
         <img src="@images/res/lolskin/common.png" alt="" :title="boxInfo[0].boxName" />
         <p class="box-name">{{ boxInfo[0].boxName }}</p>
       </div>
@@ -16,8 +16,8 @@
         <p class="text">消耗<span class="c1">{{ boxInfo[0].boxPrice*10*100 }}</span>钻石</p>
       </div>
     </div>
-    <div class="can-golden" v-if="boxInfo[1]" @click="openAward('goldenCan')">
-      <div class="img-wrap">
+    <div class="can-golden" v-if="boxInfo[1]">
+      <div class="img-wrap" @click="openAward('goldenCan')">
         <img src="@images/res/lolskin/golden.png" alt="" :title="boxInfo[1].boxName" />
         <p class="box-name">{{ boxInfo[1].boxName }}</p>
       </div>
@@ -68,14 +68,14 @@ export default {
     },
     openBox(boxInfo, boxNum){
       // 登录判断，如果要测试可以注释掉这部分
-      // if (!this.flag.isLogin) {
-      //   this.getInfoModal({
-      //     message: '请先登录！',
-      //     type: 1,
-      //     modal: 'info'
-      //   });
-      //   return;
-      // }
+      if (!this.flag.isLogin) {
+        this.getInfoModal({
+          message: '请先登录！',
+          type: 1,
+          modal: 'info'
+        });
+        return;
+      }
       if(boxInfo.boxId !== 0 && boxNum) {
         axios.boxOpen({
           boxId: boxInfo.boxId,

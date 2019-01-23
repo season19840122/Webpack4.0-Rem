@@ -13,6 +13,13 @@ module.exports = webpackMerge(webpackBase, {
           'vue-style-loader', // 处理 vue 文件中的 css 样式
           'css-loader',
           'postcss-loader',
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 192,
+              remPrecision: 6
+            }
+          }
         ]
       },
       {
@@ -22,6 +29,13 @@ module.exports = webpackMerge(webpackBase, {
           'vue-style-loader',
           'css-loader',
           'postcss-loader',
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 192,
+              remPrecision: 6
+            }
+          },
           'sass-loader',
           {
             loader: 'sass-resources-loader', // 将定义的 sass 变量、mix 等统一样式打包到每个 css 文件中，避免在每个页面中手动引入

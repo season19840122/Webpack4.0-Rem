@@ -7,13 +7,18 @@
         </a>
       </div> -->
       <div class="account">
-         您好，请<a :href="loginUrl" class="not" v-if="!flag.isLogin">[登录]</a>
+         <div v-if="!flag.isLogin">您好，请<a :href="loginUrl" class="not">[登录]</a></div>
          <div class="login" v-else>
-           <span v-if="!isCdKey">{{activityInfo.receiveTemplate}}：<template v-if="!userDataInfo.userPrizeInfo">0</template><template v-else>{{userDataInfo.userPrizeInfo.prizeCnt+userDataInfo.userPrizeInfo.freePrizeCnt}}{{userDataInfo.userPrizeInfo.prizeUnit}}</template></span>
-          <a :href="awardHref" class="btn-extract" v-if="!isCdKey">立即提取</a>
-          <span class="line" v-if="!isCdKey">|</span>
-          欢迎您，{{ userName }}
-          <a href="javascript:void(0)" class="btn-exit" @click="handleExit">退出</a>
+          <div class="p3">
+            欢迎您，{{ userName }}
+            <a href="javascript:void(0)" class="btn-exit" @click="handleExit">退出</a>
+          </div>
+          <div class="p4">
+            <!-- <span v-if="!isCdKey">{{activityInfo.receiveTemplate}}：<template v-if="!userDataInfo.userPrizeInfo">0</template><template v-else>{{userDataInfo.userPrizeInfo.prizeCnt+userDataInfo.userPrizeInfo.freePrizeCnt}}{{userDataInfo.userPrizeInfo.prizeUnit}}</template></span> -->
+            <span v-if="!isCdKey"><template v-if="!userDataInfo.userPrizeInfo">{{activityInfo.receiveTemplate}}：0</template><template v-else>{{userDataInfo.userPrizeInfo.prizeUnit}}：{{userDataInfo.userPrizeInfo.prizeCnt+userDataInfo.userPrizeInfo.freePrizeCnt}}</template></span>
+            <a :href="awardHref" class="btn-extract" v-if="!isCdKey">立即提取</a>
+            <!-- <span class="line" v-if="!isCdKey">|</span> -->
+          </div>
         </div>
       </div>
     </div>
@@ -81,8 +86,9 @@ export default {
       color: #fff0b7;
       position: absolute;
       left: 86px;
-      top: 51px;
-      font-size: 32px;
+      top: 20px;
+      width: 50%;
+      font-size: 24px;
       line-height: 42px;
       z-index: 100;
       .not {
@@ -100,9 +106,9 @@ export default {
         }
       }
       .login {
-        font-size: 12px;
+        font-size: 24px;
         line-height: 42px;
-        color: #9fa1a3;
+        color: #def3a5;
         .btn-extract {
           color: #987637;
           margin: 0 10px;
