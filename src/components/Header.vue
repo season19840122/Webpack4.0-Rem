@@ -7,7 +7,7 @@
         </a>
       </div> -->
       <div class="account">
-         <div v-if="!flag.isLogin">您好，请<a :href="loginUrl" class="not">[登录]</a></div>
+         <div v-if="flag.isLogin">您好，请<a :href="loginUrl" class="not">[登录]</a></div>
          <div class="login" v-else>
           <div class="p3">
             欢迎您，{{ userName }}

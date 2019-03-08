@@ -1,4 +1,4 @@
-let centerOpt = [{
+var centerOpt = [{
   'value': 1,
   'label': '个人中心-联系客服',
   'detail': {
@@ -25,7 +25,7 @@ let centerOpt = [{
 }
 ];
 
-let indexResource = {
+var indexResource = {
   activeName: '2019新春狂欢派对，亿万金币等你来抢',
   activeTime: '2019年1月8日-3月31日',
   activeRule: [

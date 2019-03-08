@@ -20,6 +20,7 @@ config.HTMLDirs.forEach(item => {
   HTMLPlugins.push(htmlPlugin);
   Entries[item.page] = path.resolve(__dirname, `../src/pages/${item.page}/index.js`); // 根据配置设置入口 js 文件
 });
+// console.log(Entries);
 
 const env = process.env.BUILD_MODE.trim();
 let ASSET_PATH = '/'; // dev 环境
@@ -57,6 +58,10 @@ module.exports = {
       '@components': path.resolve(__dirname, '../src/components'),
       '@pages': path.resolve(__dirname, '../src/pages'),
       '@commons': path.resolve(__dirname, '../src/commons'),
+      // webpack 使用 jQuery，如果是自行下载的
+      // 'jquery': path.resolve(__dirname, '../src/scripts/lib/jquery.min'),
+      // 如果使用 NPM 安装的 jQuery
+      'jquery': 'jquery',
     },
     extensions:['*','.css','.js','.vue']
   },

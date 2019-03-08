@@ -84,6 +84,8 @@ module.exports = webpackMerge(webpackBase, {
   },
   devServer: {
     // contentBase: config.devServerOutputPath,
+    host: '0.0.0.0', // 如果不配置成这个，默认只能是 localhost 和 127.0.0.1 能访问，用局域网 ip 是不能访问的，如：192.168.x.x
+    inline: true,
     proxy: {
       // 测试环境
       '/': {

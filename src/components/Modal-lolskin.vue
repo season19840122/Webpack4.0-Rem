@@ -179,10 +179,12 @@ export default {
       location.reload();
     },
     getQrcode(url){
-      $('.qrcode').qrcode({
-        // width: 296,
-        // height: 296,
-        text: url
+      this.$nextTick(() => {
+        $('.qrcode').qrcode({
+          // width: 296,
+          // height: 296,
+          text: url
+        });
       });
     }
   },

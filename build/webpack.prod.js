@@ -10,6 +10,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // 抽取 css extract-text-webpack-plugin 不再支持 webpack4，官方出了 mini-css-extract-plugin 来处理 css 的抽取
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = require('./config'); // 多页面的配置项
 const ASSET_PATH = config.publicPath; // 线上静态资地址
@@ -131,6 +132,18 @@ module.exports = webpackMerge(webpackBase, {
     new MiniCssExtractPlugin({
       // filename: 'css/[name].[chunkhash:8].css'
       filename: 'css/[name].css'
-    })
+    }),
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'server',
+    //   analyzerHost: '127.0.0.1',
+    //   analyzerPort: 8888,
+    //   reportFilename: 'report.html',
+    //   defaultSizes: 'parsed',
+    //   openAnalyzer: true,
+    //   generateStatsFile: false,
+    //   statsFilename: 'stats.json',
+    //   statsOptions: null,
+    //   logLevel: 'info'
+    // })
   ]
 });
