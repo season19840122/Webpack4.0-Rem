@@ -124,6 +124,10 @@ export default {
     width: 1488px;
     height: 608px;
     padding: 56px 110px;
+    .i-close {
+      right: 60px;
+      top: 57px;
+    }
     .contents {
       padding: 0;
       min-height: 160px;

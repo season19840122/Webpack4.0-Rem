@@ -113,7 +113,7 @@ export default {
 <style lang="scss" scoped>
 .home-wrap {
   height: 910px;
-  background: #000 url(~@images/res/lolskin/bg-index.jpg) no-repeat center top;
+  background: #000 url(~@images/res/lolskin/bg-index.jpg) no-repeat;
   background-size: contain;
   .home {
     @include center;
@@ -133,16 +133,16 @@ export default {
       .btn-rule {
         position: absolute;
         left: auto;
-        right: 166px;
-        top: 94px;
-        width: 168px;
-        height: 49px;
+        right: 311px;
+        top: 55px;
+        width: 149px;
+        height: 44px;
         background: url(~@images/res/lolskin/btn-rule.png) no-repeat;
         background-size: contain;
       }
     }
     .content-wrap {
-      margin-top: 125px;
+      margin-top: 256px;
     }
   }
 }

@@ -86,6 +86,7 @@ module.exports = webpackMerge(webpackBase, {
     // contentBase: config.devServerOutputPath,
     host: '0.0.0.0', // 如果不配置成这个，默认只能是 localhost 和 127.0.0.1 能访问，用局域网 ip 是不能访问的，如：192.168.x.x
     inline: true,
+    hot: true, // HMR 启用，文档还说必须有 webpack.HotModuleReplacementPlugin 才能完全启用 HMR，经测试没有也可以启用，不用在命令行里配置，在此配置也可以。
     proxy: {
       // 测试环境
       '/': {

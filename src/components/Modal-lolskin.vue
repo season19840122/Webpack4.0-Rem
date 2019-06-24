@@ -215,13 +215,13 @@ export default {
     transform: translateY(-50%);
     background: url(~@images/res/lolskin/left-arrow.png) no-repeat;
     background-size: contain;
-    left: -71px;
+    left: -65px;
     z-index: 1;
     &.right, &.right:hover {
       background: url(~@images/res/lolskin/right-arrow.png) no-repeat;
       background-size: contain;
       left: auto;
-      right: -71px;
+      right: -65px;
     }
   }
   .ant-carousel /deep/ .custom-slick-arrow:before {
@@ -236,7 +236,8 @@ export default {
     display: flex;
     justify-content: center;
     height: 491px;
-    margin-bottom: 50px;
+    margin-top: 18px;
+    // margin-bottom: 50px;
   }
   .prize-wrap{
     background: url(~@images/res/lolskin/award-box.png) no-repeat;
@@ -306,11 +307,15 @@ export default {
       &.rule {
         background: url(~@images/res/lolskin/dialog-rule.png) no-repeat;
         background-size: contain;
+        .i-close {
+          right: 95px;
+          top: 70px;
+        }
         .contents {
-          margin: 134px 130px;
+          margin: 165px 130px;
           padding-right: 30px;
-          width: 1135px;
-          height: 546px;
+          width: 1120px;
+          height: 500px;
           overflow-x: hidden;
         }
       }
@@ -352,7 +357,11 @@ export default {
         background-size: contain;
         width: 1485px;
         height: 794px;
-        padding: 33px 104px;
+        padding: 93px 104px;
+        .i-close {
+          right: 55px;
+          top: 115px;
+        }
         .contents {
           padding: 0;
           min-height: 160px;
@@ -360,7 +369,7 @@ export default {
           position: relative;
           .title {
             color: #ffda44;
-            font-size: 48px;
+            font-size: 42px;
             text-align: center;
           }
           .ul {
@@ -374,7 +383,7 @@ export default {
           }
           .part {
             width: 100%;
-            height: 120px;
+            height: 90px;
             .btn-wrap {
               position: absolute;
               left: 0;
@@ -399,7 +408,7 @@ export default {
         background-size: contain;
         width: 793px;
         height: 608px;
-        padding: 83px 18px;
+        padding: 105px 18px;
         .contents {
           padding: 0;
           position: relative;
@@ -407,6 +416,8 @@ export default {
             color: #fff0be;
             font-size: 38px;
             text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
           }
           .p2 {
             color: #fff0be;
@@ -579,8 +590,8 @@ export default {
         width: 46px;
         height: 45px;
         position: absolute;
-        right: 21px;
-        top: 25px;
+        right: 50px;
+        top: 50px;
         cursor: pointer;
       }
       .contents {

@@ -8,12 +8,12 @@
       <div class="btn-wrap">
         <button class="btn-open" @click="openBox(boxInfo[0], 1)" v-if="boxInfo[0].isHasFree">免费开启</button>
         <button class="btn-open" @click="openBox(boxInfo[0], 1)" v-else>开一次</button>
-        <button class="btn-open" @click="openBox(boxInfo[0], 10)">开十次</button>
+        <button class="btn-open ten" @click="openBox(boxInfo[0], 10)">开十次</button>
       </div>
       <div class="text-wrap">
         <p class="text" v-if="boxInfo[0].isHasFree">消耗<span class="c1">0</span>钻石</p>
         <p class="text" v-else>消耗<span class="c1">{{ boxInfo[0].boxPrice*100 }}</span>钻石</p>
-        <p class="text">消耗<span class="c1">{{ boxInfo[0].boxPrice*10*100 }}</span>钻石</p>
+        <p class="text" style="margin-right: 0;">消耗<span class="c1">{{ boxInfo[0].boxPrice*10*100 }}</span>钻石</p>
       </div>
     </div>
     <div class="can-golden" v-if="boxInfo[1]">
@@ -24,12 +24,12 @@
       <div class="btn-wrap">
         <button class="btn-open" @click="openBox(boxInfo[1], 1)" v-if="boxInfo[1].isHasFree">免费开启</button>
         <button class="btn-open" @click="openBox(boxInfo[1], 1)" v-else>开一次</button>
-        <button class="btn-open" @click="openBox(boxInfo[1], 10)">开十次</button>
+        <button class="btn-open ten" @click="openBox(boxInfo[1], 10)">开十次</button>
       </div>
       <div class="text-wrap">
         <p class="text" v-if="boxInfo[1].isHasFree">消耗<span class="c1">0</span>钻石</p>
         <p class="text" v-else>消耗<span class="c1">{{ boxInfo[1].boxPrice*100 }}</span>钻石</p>
-        <p class="text">消耗<span class="c1">{{ boxInfo[1].boxPrice*10*100 }}</span>钻石</p>
+        <p class="text" style="margin-right: 0;">消耗<span class="c1">{{ boxInfo[1].boxPrice*10*100 }}</span>钻石</p>
       </div>
     </div>
   </div>
@@ -149,67 +149,107 @@ export default {
 .can-wrap {
   @include center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   .can-common, .can-golden {
-    width: 651px;
-    height: 533px;
-    background: url(~@images/res/lolskin/can.png) no-repeat;
+    width: 562px;
+    height: 314px;
+    background: url(~@images/res/lolskin/can-common.png) no-repeat;
     background-size: contain;
-    padding: 26px 28px;
+    position: relative;
     .img-wrap {
+      height: 253px;
       img {
-        width: 599px;
-        height: 419px;
+        position: absolute;
+        right: 52px;
+        top: 61px;
+        width: 203px;
+        height: 202px;
         display: block;
         cursor: pointer;
       }
       .box-name{
-        color: #f7da9d;
-        font-size:28px;
-        height: 59px;
-        line-height: 59px;
+        position: absolute;
+        left: 20px;
+        top: 155px;
+        width: 240px;
         text-align: center;
+        color: #f2e6da;
+        font-size:32px;
         @include eps;
       }
     }
     .btn-wrap {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 30px;
+      // display: flex;
+      // justify-content: space-around;
+      width: 674px;
+      margin-left: -115px;
+      margin-top: 79px;
       .btn-open {
-        width: 212px;
-        height: 75px;
-        background: url(~@images/res/lolskin/btn-open.png) no-repeat;
+        width: 254px;
+        height: 98px;
+        line-height: 108px;
+        text-indent: 50px;
+        background: url(~@images/res/lolskin/btn-open-one.png) no-repeat;
         background-size: contain;
-        color: #463315;
+        color: #e6ad27;
         font-weight: bold;
-        font-size: 28px;
-        &:hover {
-          background: url(~@images/res/lolskin/btn-open-hover.png) no-repeat;
+        font-size: 32px;
+        &.ten {
+          margin-left: 85px;
+          background: url(~@images/res/lolskin/btn-open-ten.png) no-repeat;
           background-size: contain;
         }
-        &.disable {
-          background: url(~@images/res/lolskin/btn-open-disable.png) no-repeat;
-          background-size: contain;
-        }
+        // &:hover {
+        //   background: url(~@images/res/lolskin/btn-open-hover.png) no-repeat;
+        //   background-size: contain;
+        // }
+        // &.disable {
+        //   background: url(~@images/res/lolskin/btn-open-disable.png) no-repeat;
+        //   background-size: contain;
+        // }
       }
     }
     .text-wrap {
       display: flex;
       justify-content: space-around;
+      width: 593px;
+      margin-left: -115px;
       margin-top: 6px;
-      width: 100%;
       .text {
-        width: 212px;
+        display: inline-block;
+        width: 254px;
         color: #fae3b3;
         text-align: center;
-        font-size: 18px;
+        font-size: 24px;
         font-weight: bold;
+        margin-right: 85px;
         .c1 {
           color: #ff0000;
           font-weight: bold;
         }
       }
+    }
+  }
+  .can-golden {
+    margin-left: 87px;
+    background: url(~@images/res/lolskin/can-golden.png) no-repeat;
+    background-size: contain;
+    .img-wrap {
+      img {
+        position: absolute;
+        left: 52px;
+        top: 61px;
+      }
+      .box-name{
+        left: auto;
+        right: 20px;
+      }
+    }
+    .btn-wrap {
+      margin-left: 73px;
+    }
+    .text-wrap {
+      margin-left: 73px;
     }
   }
 }

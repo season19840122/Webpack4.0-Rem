@@ -10,8 +10,8 @@ module.exports = {
     //   dir: 'content' // 支持设置多级目录
     // },
   ],
-  // publicPath: '//static.gameboxmall.com/show/lolskin/', // 正式
-  publicPath: '/', // 测试
+  publicPath: '//static.gameboxmall.com/show/lolskin/', // 正式
+  // publicPath: '/', // 测试
   devServerOutputPath: '../dist',
   cssPublicPath: '../',
   cssOutputPath: './css/styles.css',
@@ -19,3 +19,5 @@ module.exports = {
   // imgOutputPath: '//static.gameboxmall.com/show/lolskin/img', // 配合 NProxy 图片；路径测试
   fontOutputPath: 'font',
 };
+
+// url: http://localhost:8080/lolskin.html?activityName=lolskin&source=111
