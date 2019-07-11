@@ -8,23 +8,23 @@ let HTMLPlugins = [];
 let Entries = {};
 
 config.HTMLDirs.forEach(item => {
-  let filename = `${item.page}.html`;
-  if (item.dir) filename = `${item.dir}/${item.page}.html`;
+  let filename = `${item.filename}.html`;
+  if (item.dir) filename = `${item.dir}/${item.filename}.html`;
   const htmlPlugin = new HTMLWebpackPlugin({
     publicPath: config.publicPath, //生成 publicPath
     title: item.title, // 生成的 html 页面的标题
     filename: filename, // 生成到 dist 目录下的 html 文件名称，支持多级目录（eg: `${item.page}/index.html`）
-    template: path.resolve(__dirname, '../src/template/index.html'), // 模板文件，不同入口可以根据需要设置不同模板
-    chunks: [item.page, 'vendor'], // html 文件中需要要引入的 js 模块，这里的 vendor 是 webpack 默认配置下抽离的公共模块的名称
+    template: path.resolve(__dirname, '../src/template/layout.html'), // 模板文件，不同入口可以根据需要设置不同模板
+    chunks: [item.js, 'vendor'], // html 文件中需要要引入的 js 模块，这里的 vendor 是 webpack 默认配置下抽离的公共模块的名称
   });
   HTMLPlugins.push(htmlPlugin);
-  Entries[item.page] = path.resolve(__dirname, `../src/pages/${item.page}/index.js`); // 根据配置设置入口 js 文件
+  Entries[item.js] = path.resolve(__dirname, `../src/pages/${item.js}/index.js`); // 根据配置设置入口 js 文件
 });
 // console.log(Entries);
 
 const env = process.env.BUILD_MODE.trim();
 let ASSET_PATH = '/'; // dev 环境
-if (env === 'prod') ASSET_PATH = config.publicPath;  // build 时设置成实际使用的静态服务地址：dungeon, pubg
+if (env === 'prod') ASSET_PATH = config.publicPath; // build 时设置成实际使用的静态服务地址：dungeon, pubg
 
 module.exports = {
   entry: Entries,
@@ -35,8 +35,7 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/, // 处理 vue 模块
         use: 'vue-loader',
       },
@@ -62,13 +61,14 @@ module.exports = {
       // 'jquery': path.resolve(__dirname, '../src/scripts/lib/jquery.min'),
       // 如果使用 NPM 安装的 jQuery
       'jquery': 'jquery',
+      // 默认 NPM 包导出的是运行时构建，就是 vue.common.js，不包括 template 功能，为了使用独立构建，添加如下别名
+      'vue': 'vue/dist/vue.js'
     },
-    extensions:['*','.css','.js','.vue']
+    extensions: ['*', '.css', '.js', '.vue']
   },
   plugins: [
     new VueLoaderPlugin(),
-    new CopyWebpackPlugin([
-      {
+    new CopyWebpackPlugin([{
         from: path.resolve(__dirname, '../public'),
         to: path.resolve(__dirname, '../dist'),
         ignore: ['*.html'] // mock 数据打包的时候也删掉

@@ -6,8 +6,7 @@ const config = require('./config');
 module.exports = webpackMerge(webpackBase, {
   mode: 'development',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader', // 处理 vue 文件中的 css 样式
@@ -60,12 +59,12 @@ module.exports = webpackMerge(webpackBase, {
       {
         test: /\.(png|svg|jpg|gif)$/, // 处理图片
         use: {
-          loader: 'file-loader', // 解决打包 css 文件中图片路径无法解析的问题
+          loader: 'url-loader', // 解决打包 css 文件中图片路径无法解析的问题
           options: {
             // 打包生成图片的名字
-            // name: `${config.fontOutputPath}/[path][name].[hash:8].[ext]`,
             name: `${config.imgOutputPath}/[path][name].[ext]`,
-            context: 'src/assets/images/'
+            context: 'src/assets/images/',
+            limit: 8192
             // 图片的生成路径
             // outputPath: config.imgOutputPath,
           }
@@ -98,7 +97,7 @@ module.exports = webpackMerge(webpackBase, {
       // '/mock': {
       //   target: 'http://localhost:8080', 
       // }
-    }, 
+    },
     overlay: {
       errors: true,
       warnings: true,
