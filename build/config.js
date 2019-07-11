@@ -14,8 +14,7 @@ module.exports = {
   devServerOutputPath: '../dist',
   cssOutputPath: 'css',
   jsOutputPath: 'js',
-  imgOutputPath: '../img', // 正式
-  // imgOutputPath: '//static.gameboxmall.com/show/lolskin/img', // 配合 NProxy 图片；路径测试
+  imgOutputPath: '../img',
   fontOutputPath: 'font',
 };
 
