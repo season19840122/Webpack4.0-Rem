@@ -66,7 +66,8 @@ module.exports = webpackMerge(webpackBase, {
             name: `${config.imgOutputPath}/[path][name].[ext]`,
             context: 'src/assets/images/',
             limit: 8192,
-            publicPath: ASSET_PATH
+            publicPath: ASSET_PATH + '../', // 相对路径 CSS 目录中的图片向上一层查找，与 config.js 中 publicPath 配合使用
+            // publicPath: ASSET_PATH // 绝对路径
           }
         }
       },
@@ -76,7 +77,8 @@ module.exports = webpackMerge(webpackBase, {
           loader: 'file-loader',
           options: {
             name: `${config.fontOutputPath}/[name].[ext]`,
-            publicPath: ASSET_PATH
+            publicPath: ASSET_PATH + '../', // 相对路径 CSS 目录中的图片向上一层查找，与 config.js 中 publicPath 配合使用
+            // publicPath: ASSET_PATH // 绝对路径
           }
         }
       }

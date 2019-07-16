@@ -14,7 +14,7 @@ module.exports = {
   devServerOutputPath: '../dist',
   cssOutputPath: 'css',
   jsOutputPath: 'js',
-  imgOutputPath: '../img',
+  imgOutputPath: 'img',
   fontOutputPath: 'font',
 };
 
